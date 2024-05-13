@@ -23,7 +23,7 @@ jobs:
           TARGET: ${{ secrets.TARGET_DIR }}
 
       - name: Executing remote ssh commands using ssh key
-        uses: appleboy/ssh-action@main
+        uses: appleboy/ssh-action@v2
         with:
           host: ${{ secrets.HOST_DNS }}
           username: ${{ secrets.USERNAME }}
