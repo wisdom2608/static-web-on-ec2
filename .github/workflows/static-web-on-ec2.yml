@@ -29,8 +29,9 @@ jobs:
           username: ${{ secrets.USERNAME }}
           key: ${{ secrets.EC2_SSH_KEY }}
           script: |
-            sudo apt-get update -y
-            sudo apt-get install apache2 -y
+            sudo su
+            sudo apt update -y
+            sudo apt install apache2 -y
             sudo systemctl start apache2
             sudo systemctl enable apache2
             sudo cp -r space-science/* var/www/html
