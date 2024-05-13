@@ -33,4 +33,4 @@ jobs:
             sudo apt-get install apache2 -y
             sudo systemctl start apache2
             sudo systemctl enable apache2
-            sudo cp -r space-science/* var/www/html
+            sudo cp -r space-science/* /var/www/html
