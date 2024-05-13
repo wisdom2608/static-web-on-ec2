@@ -1,4 +1,4 @@
-name: Push-to-EC2
+name: Host a Static Website on EC2 Using Github Actions
 
 on: #The workflow will run if a change is made on a branch called "main".
   push:
@@ -7,7 +7,7 @@ on: #The workflow will run if a change is made on a branch called "main".
 
 jobs:
   deploy:
-    name: Deploy to EC2 on master branch push
+    name: Deploy to EC2 on main branch push
     runs-on: ubuntu-latest
 
     steps:
