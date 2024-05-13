@@ -1,7 +1,6 @@
 name: Host a Static Website on EC2 Using Github Actions
 
-# Trigger deployment only on push to main branch
-on:
+on: #The workflow will run if a change is made on a branch called "main".
   push:
     branches:
       - main
@@ -15,8 +14,8 @@ jobs:
       - name: Checkout the files
         uses: actions/checkout@v2
 
-      - name: SSH to EC2
-        uses: easingthemes/ssh-deploy@v2
+      - name: Deploy to Server 1
+        uses: actions/checkout@v2 
         env:
           SSH_PRIVATE_KEY: ${{ secrets.EC2_SSH_KEY }}
           REMOTE_HOST: ${{ secrets.HOST_DNS }}
@@ -30,9 +29,8 @@ jobs:
           username: ${{ secrets.USERNAME }}
           key: ${{ secrets.EC2_SSH_KEY }}
           script: |
-            sudo apt-get -y update
-            sudo apt-get install -y apache2
+            sudo apt-get update -y
+            sudo apt-get install apache2 -y
             sudo systemctl start apache2
             sudo systemctl enable apache2
-            cd home
-            sudo cp -r space-science/* /var/www/html
+            sudo cp -r space-science/* var/www/html
