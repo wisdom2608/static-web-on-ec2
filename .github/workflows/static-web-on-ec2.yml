@@ -28,7 +28,7 @@ jobs:
           host: ${{ secrets.HOST_DNS }}
           username: ${{ secrets.USERNAME }}
           key: ${{ secrets.EC2_SSH_KEY }}
-          script: |
+          script: | #Run this script on EC2
             sudo apt update -y
             sudo apt install apache2 -y
             sudo systemctl start apache2
