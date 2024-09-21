@@ -1,6 +1,6 @@
 **## Hosting a Website on AWS EC2 with a CICD Setup Using Github Actions**
 
-- This project ivolves the following steps:
+- This project involves the following steps:
 
 - *Step 1: Create an EC2 instance, allow the neccessary ports in your sg, and download your keypair*
 
